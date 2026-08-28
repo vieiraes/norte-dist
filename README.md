@@ -12,7 +12,7 @@
 <p align="center">
   <a href="../../releases/latest"><img alt="Última release" src="https://img.shields.io/github/v/release/vieiraes/norte-dist?label=vers%C3%A3o&color=blue" /></a>
   <img alt="Electron" src="https://img.shields.io/badge/Electron-React%20%2B%20TypeScript-47848F?logo=electron" />
-  <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-green" /></a>
+  <a href="LICENSE"><img alt="License: Proprietary" src="https://img.shields.io/badge/license-propriet%C3%A1ria-lightgrey" /></a>
 </p>
 
 ---
@@ -195,4 +195,6 @@ Criado e mantido por **[Bruno Vieira](https://github.com/vieiraes)**.
 
 ## Licença
 
-[MIT](LICENSE) — use, modifique e redistribua livremente, contanto que o aviso de copyright e a licença original sejam mantidos.
+Software proprietário — ver [LICENSE](LICENSE). O binário compilado (`.deb`) é distribuído
+gratuitamente pra uso pessoal; o código-fonte **não é open source** e não é redistribuível,
+modificável nem passível de engenharia reversa sem autorização prévia.

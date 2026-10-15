@@ -18,28 +18,53 @@
 ---
 
 Este repositório **não tem código-fonte** — é o canal de distribuição dos instaladores prontos do
-Norte. Cada [release](../../releases) traz o `.deb` do Linux daquela versão, com as notas do que
-mudou.
+Norte. Cada [release](../../releases) traz os instaladores daquela versão para **Windows** e
+**Linux**, com as notas do que mudou.
 
-## Instalação (Linux, `.deb`)
+## Instalação
 
-1. Baixe o `.deb` mais recente na [página de Releases](../../releases/latest).
-2. Instale:
-   ```bash
-   sudo dpkg -i norte_*.deb
-   ```
-3. Se faltar alguma dependência, resolva com:
-   ```bash
-   sudo apt-get install -f
-   ```
+Baixe na [página de Releases](../../releases/latest) o arquivo do seu sistema:
 
-Depois de instalado, o Norte abre pelo menu de aplicativos do sistema ou pelo comando `norte`.
+| Sistema | Arquivo | Atualização |
+|---|---|---|
+| Windows 10/11 (64 bits) | `Norte-Setup-<versão>.exe` | aviso quando sai versão nova |
+| Linux (Debian, Ubuntu, Mint…) | `norte_<versão>_amd64.deb` | automática |
+| Linux (qualquer distribuição) | `Norte-<versão>.AppImage` | automática |
+
+### Windows
+
+Rode o `Norte-Setup-<versão>.exe`. O instalador ainda não é assinado digitalmente, então o Windows
+pode mostrar "O Windows protegeu o computador": clique em **Mais informações → Executar assim mesmo**.
+
+### Linux (`.deb`)
+
+```bash
+sudo dpkg -i norte_*.deb
+sudo apt-get install -f   # só se faltar alguma dependência
+```
+
+Depois de instalado, o Norte abre pelo menu de aplicativos ou pelo comando `norte`.
+
+### Linux (AppImage)
+
+```bash
+chmod +x Norte-*.AppImage
+./Norte-*.AppImage
+```
 
 ## Atualizando
 
-Não há atualização automática por enquanto — repita os passos acima com o `.deb` da versão mais
-nova quando uma sair. A [página de Releases](../../releases) é o changelog: cada tag traz as notas
-do que mudou desde a anterior.
+- **Linux (`.deb` e AppImage):** automática a partir da 0.1.71. O Norte baixa a versão nova em
+  segundo plano e avisa no Companion (o ícone no canto da tela). O AppImage aplica ao reiniciar; no
+  `.deb`, clique em **Reiniciar e atualizar** e o sistema pede a sua senha. Em **Configurações →
+  Companion** dá para buscar atualização na hora ou desligar a busca automática.
+  Quem tem um `.deb` anterior à 0.1.71 precisa instalar a 0.1.71 à mão uma vez; dali em diante ela
+  se atualiza sozinha.
+- **Windows:** o Norte avisa quando sai versão nova, com link para esta página; baixe e rode o
+  instalador novo por cima do antigo.
+
+A [página de Releases](../../releases) é o changelog: cada versão traz as notas do que mudou desde a
+anterior.
 
 ---
 
@@ -195,6 +220,6 @@ Criado e mantido por **[Bruno Vieira](https://github.com/vieiraes)**.
 
 ## Licença
 
-Software proprietário — ver [LICENSE](LICENSE). O binário compilado (`.deb`) é distribuído
-gratuitamente pra uso pessoal; o código-fonte **não é open source** e não é redistribuível,
+Software proprietário — ver [LICENSE](LICENSE). Os binários compilados (`.exe`, `.deb` e AppImage) são
+distribuídos gratuitamente pra uso pessoal; o código-fonte **não é open source** e não é redistribuível,
 modificável nem passível de engenharia reversa sem autorização prévia.
